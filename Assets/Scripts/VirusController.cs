@@ -56,6 +56,7 @@ public class VirusController : MonoBehaviour
             anim.SetBool("Healed", true);
             GetComponent<Collider2D>().enabled = false;
             counterCtrl.virusCount += 1;
+            Destroy(collision.gameObject);
         }
     }
 }
