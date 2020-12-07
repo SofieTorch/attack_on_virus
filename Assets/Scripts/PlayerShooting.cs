@@ -9,12 +9,9 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField]
     GameObject bullet = default;
 
-    void Start()
-    {
-        
-    }
+    void Start() { }
 
-    // Update is called once per frame
+    
     void Update()
     {
         if(Input.GetKeyDown("x")) {

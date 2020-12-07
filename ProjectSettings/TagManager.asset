@@ -7,6 +7,7 @@ TagManager:
   - Stars
   - Planets
   - Bullet
+  - Virus
   layers:
   - Default
   - TransparentFX
@@ -50,12 +51,12 @@ TagManager:
   - name: Stars
     uniqueID: 3510275297
     locked: 0
+  - name: Bullet
+    uniqueID: 2461778327
+    locked: 0
   - name: Player
     uniqueID: 518068843
     locked: 0
   - name: Limits
     uniqueID: 4206403625
-    locked: 0
-  - name: Bullet
-    uniqueID: 2461778327
     locked: 0
