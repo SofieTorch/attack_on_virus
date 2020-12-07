@@ -14,6 +14,9 @@ public class VirusController : MonoBehaviour
     [SerializeField]
     float margin = 1.2f;
 
+    [SerializeField]
+    CounterController counterCtrl = default;
+
     float rotZ = 0f;
     Vector3 pos;
     Animator anim;
@@ -52,6 +55,7 @@ public class VirusController : MonoBehaviour
         if(collision.gameObject.tag == "Bullet") {
             anim.SetBool("Healed", true);
             GetComponent<Collider2D>().enabled = false;
+            counterCtrl.virusCount += 1;
         }
     }
 }

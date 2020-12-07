@@ -60,3 +60,6 @@ TagManager:
   - name: Limits
     uniqueID: 4206403625
     locked: 0
+  - name: Canvas
+    uniqueID: 911725533
+    locked: 0

@@ -135,3 +135,4 @@ MonoBehaviour:
   rotSpeed: 5
   velocity: 2
   margin: 1.2
+  counterCtrl: {fileID: 0}
