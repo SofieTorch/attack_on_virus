@@ -9,10 +9,12 @@ public class PlayerMovement : MonoBehaviour
     float speed = 5f;
 
     Animator anim;
+    GameObject camera;
     
     void Start()
     {
         anim = GetComponent<Animator>();
+        camera = GameObject.FindWithTag("MainCamera");
     }
 
     
@@ -24,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
         float movementV = Input.GetAxis("Vertical");
         transform.position += Vector3.up * movementV * speed * Time.deltaTime;
         float movementH = Input.GetAxis("Horizontal");
-        if(movementH > 0.1f){
+        if(transform.position.x < camera.transform.position.x + 6) {
             transform.position += Vector3.right * movementH * speed * Time.deltaTime;
         }
 
