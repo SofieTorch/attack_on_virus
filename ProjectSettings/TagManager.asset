@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Stars
+  - Planets
   layers:
   - Default
   - TransparentFX
@@ -40,4 +42,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2940683253
+    locked: 0
+  - name: Stars
+    uniqueID: 3510275297
+    locked: 0
+  - name: Player
+    uniqueID: 518068843
+    locked: 0
+  - name: Limits
+    uniqueID: 4206403625
     locked: 0
