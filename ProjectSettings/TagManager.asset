@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Stars
   - Planets
+  - Bullet
   layers:
   - Default
   - TransparentFX
