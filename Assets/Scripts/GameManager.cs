@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    
+    int currentLevel = 0;
+
     void Start()
     {
         
@@ -17,7 +18,16 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void Restart() {
+    public void Restart(int currentLevel) {
+        this.currentLevel = currentLevel;
+        SceneManager.LoadScene(this.currentLevel);
+    }
+
+    public void GoToMenu() {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Play() {
         SceneManager.LoadScene(1);
     }
 }
