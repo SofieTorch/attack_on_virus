@@ -32,21 +32,23 @@ public class VirusController : MonoBehaviour
     
     void FixedUpdate()
     {
-        rotZ += Time.deltaTime * rotSpeed;
-        transform.rotation = Quaternion.Euler(0, 0, rotZ);
+        if(GameObject.FindWithTag("Player")) {
+            rotZ += Time.deltaTime * rotSpeed;
+            transform.rotation = Quaternion.Euler(0, 0, rotZ);
 
-        if(transform.position.y >= pos.y + margin) {
-            velocity = -velocity;
-        }
-        if(transform.position.y <= pos.y - margin) {
-            velocity = velocity * -1;
-        }
+            if(transform.position.y >= pos.y + margin) {
+                velocity = -velocity;
+            }
+            if(transform.position.y <= pos.y - margin) {
+                velocity = velocity * -1;
+            }
 
-        transform.position += Vector3.up * Time.deltaTime * velocity;
-        transform.position += Vector3.left * Time.deltaTime * 2f;
+            transform.position += Vector3.up * Time.deltaTime * velocity;
+            transform.position += Vector3.left * Time.deltaTime * 2f;
 
-        if(transform.position.x < camera.transform.position.x - 6) {
-            Destroy(gameObject, 2f);
+            if(transform.position.x < camera.transform.position.x - 10) {
+                Destroy(gameObject);
+            }
         }
     }
 

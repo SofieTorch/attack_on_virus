@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class CounterController : MonoBehaviour
 {
     [SerializeField]
-    GameObject life1, life2, life3;
+    GameObject life1, life2, life3, gameOverPanel;
 
     [SerializeField]
-    Text antCountder  = default, virCounter = default;
+    Text antCountder  = default,
+         virCounter = default,
+         gameOverTxt = default;
     
     Animator anim;
     private int lifeCount;
@@ -22,6 +24,8 @@ public class CounterController : MonoBehaviour
         virusCount = 0;
         lifeCount = 3;
         anim = GetComponent<Animator>();
+        gameOverTxt.enabled = false;
+        gameOverPanel.SetActive(false);
     }
 
     
@@ -50,6 +54,12 @@ public class CounterController : MonoBehaviour
                 life2.gameObject.SetActive(false);
                 life3.gameObject.SetActive(false);
                 break;
+        }
+
+        if(lifeCount <= 0) {
+            Destroy(gameObject, 0.5f);
+            gameOverTxt.enabled = true;
+            gameOverPanel.SetActive(true);
         }
     }
 
