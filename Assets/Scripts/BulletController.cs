@@ -16,9 +16,7 @@ public class BulletController : MonoBehaviour
     
     void FixedUpdate()
     {
-        if(GameObject.FindWithTag("Player")) {
-            rb.velocity = new Vector2(+speed * Time.deltaTime, 0);
-            Destroy(gameObject, 5f);
-        }
+        rb.velocity = new Vector2(+speed * Time.deltaTime, 0);
+        Destroy(gameObject, 5f);
     }
 }

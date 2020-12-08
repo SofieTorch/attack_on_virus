@@ -14,8 +14,7 @@ public class CounterController : MonoBehaviour
          gameOverTxt = default;
     
     Animator anim;
-    private int lifeCount;
-    public int virusCount, antidoteCount;
+    public int virusCount, antidoteCount, lifeCount;
 
 
     void Start()
@@ -59,11 +58,7 @@ public class CounterController : MonoBehaviour
         }
 
         if(lifeCount <= 0) {
-            Destroy(gameObject, 0.5f);
-            gameOverTxt.enabled = true;
-            gameOverPanel.SetActive(true);
-            btnRestart.SetActive(true);
-            btnBackToMenu.SetActive(true);
+            Destroy(gameObject);
         }
     }
 
