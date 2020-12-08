@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CounterController : MonoBehaviour
 {
     [SerializeField]
-    GameObject life1, life2, life3, gameOverPanel;
+    GameObject life1, life2, life3, gameOverPanel, btnRestart, btnBackToMenu;
 
     [SerializeField]
     Text antCountder  = default,
@@ -26,6 +26,8 @@ public class CounterController : MonoBehaviour
         anim = GetComponent<Animator>();
         gameOverTxt.enabled = false;
         gameOverPanel.SetActive(false);
+        btnRestart.SetActive(false);
+        btnBackToMenu.SetActive(false);
     }
 
     
@@ -60,6 +62,8 @@ public class CounterController : MonoBehaviour
             Destroy(gameObject, 0.5f);
             gameOverTxt.enabled = true;
             gameOverPanel.SetActive(true);
+            btnRestart.SetActive(true);
+            btnBackToMenu.SetActive(true);
         }
     }
 
