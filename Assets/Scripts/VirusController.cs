@@ -50,6 +50,7 @@ public class VirusController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Bullet") {
+            SoundManager.PlaySound("virusHit");
             anim.SetBool("Healed", true);
             GetComponent<Collider2D>().enabled = false;
             counterCtrl.virusCount += 1;

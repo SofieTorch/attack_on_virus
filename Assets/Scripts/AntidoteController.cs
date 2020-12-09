@@ -5,12 +5,6 @@ using UnityEngine;
 public class AntidoteController : MonoBehaviour
 {
     float flag = 1f;
-
-    void Start()
-    {
-        
-    }
-
     
     void FixedUpdate()
     {
@@ -23,6 +17,7 @@ public class AntidoteController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Player") {
+            SoundManager.PlaySound("win");
             GameManager.levelPassed = true;
             Destroy(gameObject);
         }

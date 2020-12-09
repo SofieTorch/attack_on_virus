@@ -56,16 +56,20 @@ public class CounterController : MonoBehaviour
                 life3.gameObject.SetActive(false);
                 break;
         }
-
-        if(lifeCount <= 0) {
-            Destroy(gameObject);
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Virus") {
             lifeCount -= 1;
             anim.SetTrigger("Exploting");
+
+            if(lifeCount <= 0) {
+                SoundManager.PlaySound("gameOver");
+                Destroy(gameObject);
+            }
+            else {
+                SoundManager.PlaySound("playerHit");
+            }
         }
     }
 
