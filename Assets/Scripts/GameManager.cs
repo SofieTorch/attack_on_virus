@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
-    GameObject panel, btnRestartGO, btnToMenuGO, btnPause, btnResume, btnRestartP, btnToMenuP;
+    GameObject panel, btnRestartGO, btnToMenuGO, btnPause, btnResume, btnRestartP, btnToMenuP, btnNextLevel;
 
     [SerializeField]
-    Text gameOverTxt, pauseTxt;
+    Text gameOverTxt, pauseTxt, levelPassTxt01, levelPassTxt02;
 
     [SerializeField]
     CounterController counterCtrl = default;
@@ -18,13 +18,15 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     int currentScene = 0;
 
+    public static bool levelPassed = false;
+
     void Start()
     {
         Time.timeScale = 1f;
 
         if(currentScene != 0) {
-            gameOverTxt.enabled = false;
             panel.SetActive(false);
+            gameOverTxt.enabled = false;
             btnRestartGO.SetActive(false);
             btnToMenuGO.SetActive(false);
 
@@ -32,6 +34,10 @@ public class GameManager : MonoBehaviour
             btnResume.SetActive(false);
             btnRestartP.SetActive(false);
             btnToMenuP.SetActive(false);
+
+            levelPassTxt01.enabled = false;
+            levelPassTxt02.enabled = false;
+            btnNextLevel.SetActive(false);
         }
     }
 
@@ -41,6 +47,18 @@ public class GameManager : MonoBehaviour
         if(currentScene != 0){
             if(counterCtrl.lifeCount <= 0) {
                 this.GameOver();
+            }
+
+            if(levelPassed) {
+                Time.timeScale = 0f;
+                panel.SetActive(true);
+                btnPause.SetActive(false);
+                levelPassTxt01.enabled = true;
+                levelPassTxt02.enabled = true;
+                btnRestartP.SetActive(true);
+                btnToMenuP.SetActive(true);
+                btnNextLevel.SetActive(true);
+                levelPassed = false;
             }
         }
     }

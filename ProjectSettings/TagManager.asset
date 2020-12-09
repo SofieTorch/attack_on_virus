@@ -8,6 +8,7 @@ TagManager:
   - Planets
   - Bullet
   - Virus
+  - Antidote
   layers:
   - Default
   - TransparentFX

@@ -35,10 +35,7 @@ public class VirusController : MonoBehaviour
         rotZ += Time.deltaTime * rotSpeed;
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
 
-        if(transform.position.y >= pos.y + margin) {
-            velocity = -velocity;
-        }
-        if(transform.position.y <= pos.y - margin) {
+        if(transform.position.y >= pos.y + margin || transform.position.y <= pos.y - margin) {
             velocity = velocity * -1;
         }
 
